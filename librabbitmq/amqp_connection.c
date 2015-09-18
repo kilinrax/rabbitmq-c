@@ -135,7 +135,7 @@ amqp_get_socket(amqp_connection_state_t state)
 
 int amqp_tune_connection(amqp_connection_state_t state,
                          int channel_max,
-                         int frame_max,
+                         uint32_t frame_max,
                          int heartbeat)
 {
   void *newbuf;

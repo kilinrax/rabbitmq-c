@@ -1079,7 +1079,7 @@ AMQP_PUBLIC_FUNCTION
 int
 AMQP_CALL amqp_tune_connection(amqp_connection_state_t state,
                                int channel_max,
-                               int frame_max,
+                               uint32_t frame_max,
                                int heartbeat);
 
 /**
@@ -1767,7 +1767,7 @@ AMQP_CALL amqp_get_rpc_reply(amqp_connection_state_t state);
 AMQP_PUBLIC_FUNCTION
 amqp_rpc_reply_t
 AMQP_CALL amqp_login(amqp_connection_state_t state, char const *vhost,
-                     int channel_max, int frame_max, int heartbeat,
+                     int channel_max, uint32_t frame_max, int heartbeat,
                      amqp_sasl_method_enum sasl_method, ...);
 
 /**
@@ -1825,7 +1825,7 @@ AMQP_CALL amqp_login(amqp_connection_state_t state, char const *vhost,
 AMQP_PUBLIC_FUNCTION
 amqp_rpc_reply_t
 AMQP_CALL amqp_login_with_properties(amqp_connection_state_t state, char const *vhost,
-                                     int channel_max, int frame_max, int heartbeat,
+                                     int channel_max, uint32_t frame_max, int heartbeat,
                                      const amqp_table_t *properties, amqp_sasl_method_enum sasl_method, ...);
 
 struct amqp_basic_properties_t_;

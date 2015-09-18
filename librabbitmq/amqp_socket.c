@@ -1113,7 +1113,7 @@ static int amqp_table_contains_entry(const amqp_table_t *table,
 static amqp_rpc_reply_t amqp_login_inner(amqp_connection_state_t state,
     char const *vhost,
     int channel_max,
-    int frame_max,
+    uint32_t frame_max,
     int heartbeat,
     const amqp_table_t *client_properties,
     amqp_sasl_method_enum sasl_method,
@@ -1121,7 +1121,7 @@ static amqp_rpc_reply_t amqp_login_inner(amqp_connection_state_t state,
 {
   int res;
   amqp_method_t method;
-  int server_frame_max;
+  uint32_t server_frame_max;
   uint16_t server_channel_max;
   uint16_t server_heartbeat;
   amqp_rpc_reply_t result;
@@ -1347,7 +1347,7 @@ error_res:
 amqp_rpc_reply_t amqp_login(amqp_connection_state_t state,
                             char const *vhost,
                             int channel_max,
-                            int frame_max,
+                            uint32_t frame_max,
                             int heartbeat,
                             amqp_sasl_method_enum sasl_method,
                             ...)
@@ -1368,7 +1368,7 @@ amqp_rpc_reply_t amqp_login(amqp_connection_state_t state,
 amqp_rpc_reply_t amqp_login_with_properties(amqp_connection_state_t state,
     char const *vhost,
     int channel_max,
-    int frame_max,
+    uint32_t frame_max,
     int heartbeat,
     const amqp_table_t *client_properties,
     amqp_sasl_method_enum sasl_method,

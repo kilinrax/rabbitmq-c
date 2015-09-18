@@ -146,7 +146,7 @@ struct amqp_connection_state_t_ {
   amqp_connection_state_enum state;
 
   int channel_max;
-  int frame_max;
+  uint32_t frame_max;
   int heartbeat;
 
   /* buffer for holding frame headers.  Allows us to delay allocating
